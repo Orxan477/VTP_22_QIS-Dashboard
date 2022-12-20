@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj": {}
+    "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj": {
+    "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
+        "projectUniqueName": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
         "projectName": "VTP_22_Dashboard",
-        "projectPath": "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
+        "projectPath": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
         "packagesPath": "C:\\Users\\Orxan477\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\obj\\",
+        "outputPath": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

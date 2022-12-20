@@ -216,6 +216,9 @@ namespace VTP_22_Dashboard.Migrations
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
+                    b.Property<int>("UniversitiesId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -231,6 +234,8 @@ namespace VTP_22_Dashboard.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("UniversitiesId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -250,6 +255,23 @@ namespace VTP_22_Dashboard.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("VTP_22_Dashboard.Models.Universities", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Universities");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -311,7 +333,15 @@ namespace VTP_22_Dashboard.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("VTP_22_Dashboard.Models.Universities", "Universities")
+                        .WithMany()
+                        .HasForeignKey("UniversitiesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Departments");
+
+                    b.Navigation("Universities");
                 });
 
             modelBuilder.Entity("VTP_22_Dashboard.Models.Departments", b =>

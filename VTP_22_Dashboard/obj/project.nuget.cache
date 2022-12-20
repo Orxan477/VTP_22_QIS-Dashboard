@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BCfGf1YJInFZSJjpoK+MPn0edjJACJvBEWuqqTPnXzxjYnFI25h4XWEMzriPDO/1cAe6PSkFHA50dJucu0HWbQ==",
+  "dgSpecHash": "SoMfPq96dMQ8sMwAHaSPOdE4aUivagu5a7CV+CiKOrlgu1m7GKz4bbaLGJal563+raP44ZLlsqpWELfZZXGcew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
+  "projectFilePath": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Orxan477\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Orxan477\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
