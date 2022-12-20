@@ -92,6 +92,11 @@ namespace VTP_22_Dashboard.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public async Task<ActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
         private async Task GetSelectedItemAsync()
         {
             ViewBag.university = new SelectList(await _context.Universities
