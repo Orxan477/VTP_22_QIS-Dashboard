@@ -1,4 +1,4 @@
-﻿@using VTP_22_Dashboard.ViewModels
+﻿@using VTP_22_Dashboard.ViewModels.Account
 @model RegisterVM
 @{
     ViewData["Title"] = "Register";
@@ -11,7 +11,7 @@
                 <div class="card col-lg-4 mx-auto">
                     <div class="card-body px-5 py-5">
                         <h3 class="card-title text-left mb-3">Register</h3>
-                            <div asp-validation-summary="ModelOnly"></div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <form method="post">
                             <div class="form-group">
                                 <label asp-for="Email"></label>

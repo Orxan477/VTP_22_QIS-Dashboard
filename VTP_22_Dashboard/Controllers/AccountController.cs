@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VTP_22_Dashboard.DAL;
 using VTP_22_Dashboard.Models;
 using VTP_22_Dashboard.Utilities;
-using VTP_22_Dashboard.ViewModels;
+using VTP_22_Dashboard.ViewModels.Account;
 
 namespace VTP_22_Dashboard.Controllers
 {
@@ -25,6 +26,7 @@ namespace VTP_22_Dashboard.Controllers
             _userManager = userManager;
             _roleManager = roleManager;
         }
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Register()
         {
             await GetSelectedItemAsync();
@@ -44,6 +46,7 @@ namespace VTP_22_Dashboard.Controllers
                 DepartmentsId = register.DepartentId,
                 PhoneNumber = register.PhoneNumber,
                 UserName = register.UserName,
+                CreatedAt=DateTime.UtcNow,
             };
             IdentityResult identityResult = await _userManager.CreateAsync(newUser, "Admin123");
             if (!identityResult.Succeeded)
@@ -61,6 +64,32 @@ namespace VTP_22_Dashboard.Controllers
             await _userManager.AddToRoleAsync(newUser, UserRoles.Student.ToString());
             await GetSelectedItemAsync();
             return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginVM login)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(login);
+            }
+            var user = await _userManager.FindByEmailAsync(login.Email);
+            if (user is null)
+            {
+                return NotFound();
+            }
+            var result = await _signInManager.PasswordSignInAsync(user, login.Password, false, false);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         private async Task GetSelectedItemAsync()

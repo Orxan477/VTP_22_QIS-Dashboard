@@ -12,8 +12,8 @@
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                  <span>Gold Member</span>
+                  <h5 class="mb-0 font-weight-normal">@User.Identity.Name</h5>
+                  @*<span>Gold Member</span>*@
                 </div>
               </div>
             </div>
@@ -22,11 +22,19 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" asp-controller="Home" asp-action="Index">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
               <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" asp-controller="Account" asp-action="Register">
+              <span class="menu-icon">
+                <i class="mdi mdi-account-plus"></i>
+              </span>
+              <span class="menu-title">Student Register</span>
             </a>
           </li>
         </ul>
