@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Documents\\Code Academy\\VTP22\\VTP_22_Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj": {}
+    "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj": {}
   },
   "projects": {
-    "E:\\Documents\\Code Academy\\VTP22\\VTP_22_Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj": {
+    "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
+        "projectUniqueName": "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
         "projectName": "VTP_22_Dashboard",
-        "projectPath": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
+        "projectPath": "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\VTP_22_Dashboard.csproj",
         "packagesPath": "C:\\Users\\Orxan477\\.nuget\\packages\\",
-        "outputPath": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_Dashboard\\VTP_22_Dashboard\\obj\\",
+        "outputPath": "C:\\Users\\Orxan477\\Desktop\\vtp\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,24 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.11, )"
