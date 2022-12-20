@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using VTP_22_Dashboard.DAL;
 using VTP_22_Dashboard.Models;
 using VTP_22_Dashboard.Utilities;
@@ -23,8 +25,9 @@ namespace VTP_22_Dashboard.Controllers
             _userManager = userManager;
             _roleManager = roleManager;
         }
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
+            await GetSelectedItemAsync();
             return View();
         }
         [HttpPost]
@@ -49,17 +52,23 @@ namespace VTP_22_Dashboard.Controllers
                 {
                     ModelState.AddModelError("", error.Description);
                 }
+                await GetSelectedItemAsync();
                 return View();
             }
             //await _userManager.AddToRoleAsync(newUser, UserRoles.Admin.ToString());
 
 
             await _userManager.AddToRoleAsync(newUser, UserRoles.Student.ToString());
-
+            await GetSelectedItemAsync();
             return View();
         }
 
-
+        private async Task GetSelectedItemAsync()
+        {
+            ViewBag.university = new SelectList(await _context.Universities
+                                                             .ToListAsync(), "Id", "Name");
+            ViewBag.department = new SelectList(await _context.Departments.ToListAsync(), "Id", "Name");
+        }
         public async Task CreateRole()
         {
             foreach (var role in Enum.GetValues(typeof(UserRoles)))

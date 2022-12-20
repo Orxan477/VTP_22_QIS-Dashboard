@@ -1,7 +1,63 @@
-﻿
+﻿@using VTP_22_Dashboard.ViewModels
+@model RegisterVM
 @{
     ViewData["Title"] = "Register";
 }
 
-<h1>Register</h1>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+                <div class="card col-lg-4 mx-auto">
+                    <div class="card-body px-5 py-5">
+                        <h3 class="card-title text-left mb-3">Register</h3>
+                            <div asp-validation-summary="ModelOnly"></div>
+                        <form method="post">
+                            <div class="form-group">
+                                <label asp-for="Email"></label>
+                                <input asp-for="Email" class="form-control p_input">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FullName">Full Name</label>
+                                <input asp-for="FullName" class="form-control p_input">
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="UserName"></label>
+                                <input asp-for="UserName" class="form-control p_input">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PhoneNumber"></label>
+                                <input asp-for="PhoneNumber" class="form-control p_input">
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                            <div class="form-group d-flex align-items-center justify-content-between">
+                                <div>
+                                    <label asp-for="UniversityId">University</label>
+                                    <select asp-for="UniversityId" asp-items="@ViewBag.university" class="form-select" aria-label="Default select example">
+                                        <span class="text-danger" asp-validation-for="UniversityId"></span>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label asp-for="DepartentId">Department</label>
+                                    <select asp-for="DepartentId" asp-items="@ViewBag.department" class="form-select" aria-label="Default select example">
+                                        <span class="text-danger" asp-validation-for="DepartentId"></span>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- row ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
 
