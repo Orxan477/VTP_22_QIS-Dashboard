@@ -47,5 +47,18 @@ namespace VTP_22_Dashboard.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult Update()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(CreateUniVM updateuni)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(createUni);
+            }
+        }
     }
 }
