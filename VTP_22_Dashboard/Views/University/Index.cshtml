@@ -33,7 +33,7 @@
                                 <td>
                                     <a asp-action="Update" class="btn btn-warning" asp-route-id="@uni.Id"><i class="mdi mdi-table-edit"></i></a>
                                     <form class="d-inline delete-btn" asp-action="Delete" asp-route-id="@uni.Id" method="post">
-                                        <button type="submit" class="btn btn-danger "><i class="mdi mdi-delete-forever"></i></button>
+                                        <button type="submit" class="btn btn-danger delete-btn"><i class="mdi mdi-delete-forever"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -45,4 +45,3 @@
         </div>
     </div>
 </div>
-
