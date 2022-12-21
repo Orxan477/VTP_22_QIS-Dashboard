@@ -80,5 +80,15 @@ namespace VTP_22_Dashboard.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            Universities dbUni = _context.Universities.Where(x => x.Id == id).FirstOrDefault();
+            if (dbUni is null) return NotFound();
+            _context.Universities.Remove(dbUni);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
