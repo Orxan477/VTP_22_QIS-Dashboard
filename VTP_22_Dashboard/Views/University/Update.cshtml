@@ -1,0 +1,27 @@
+﻿@using VTP_22_Dashboard.ViewModels.University
+@model UpdateUniVM
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-center">
+                        <h4 class="card-title">Update</h4>
+                    </div>
+                    <form class="forms-sample" method="post">
+                      <div class="form-group row">
+                        <label for="exampleInputUsername2" class="col-sm-3 col-form-label" asp-for="Name"></label>
+                        <div class="col-sm-9">
+                          <input asp-for="Name" class="form-control" id="exampleInputUsername2">
+                          <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <a class="btn btn-white" asp-action="Index">Cancel</a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+

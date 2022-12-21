@@ -776,3 +776,5 @@ E:\Documents\Code Academy\VTP22\VTP_22_QIS-Dashboard\VTP_22_Dashboard\obj\Debug\
 E:\Documents\Code Academy\VTP22\VTP_22_QIS-Dashboard\VTP_22_Dashboard\obj\Debug\net6.0\VTP_22_Dashboard.pdb
 E:\Documents\Code Academy\VTP22\VTP_22_QIS-Dashboard\VTP_22_Dashboard\obj\Debug\net6.0\VTP_22_Dashboard.genruntimeconfig.cache
 E:\Documents\Code Academy\VTP22\VTP_22_QIS-Dashboard\VTP_22_Dashboard\obj\Debug\net6.0\ref\VTP_22_Dashboard.dll
+E:\Documents\Code Academy\VTP22\VTP_22_QIS-Dashboard\VTP_22_Dashboard\bin\Debug\net6.0\AutoMapper.dll
+E:\Documents\Code Academy\VTP22\VTP_22_QIS-Dashboard\VTP_22_Dashboard\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
