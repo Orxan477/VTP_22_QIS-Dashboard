@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using VTP_22_Dashboard.Models;
 using VTP_22_Dashboard.ViewModels.Department;
+using VTP_22_Dashboard.ViewModels.Participant;
 using VTP_22_Dashboard.ViewModels.University;
 
 namespace VTP_22_Dashboard.Profiles
@@ -13,6 +14,8 @@ namespace VTP_22_Dashboard.Profiles
             CreateMap<CreateUniVM, Universities>();
             CreateMap<CreateDVM, Departments>();
             CreateMap<Departments, UpdateDVM>();
-        }
+            CreateMap<AppUser, UpdatePraticipant>();
+            CreateMap<UpdatePraticipant, AppUser>();
+            }
     }
 }

@@ -63,7 +63,7 @@ namespace VTP_22_Dashboard.Controllers
 
             await _userManager.AddToRoleAsync(newUser, UserRoles.Student.ToString());
             await GetSelectedItemAsync();
-            return View();
+            return RedirectToAction("Index","Participant");
         }
 
         public IActionResult Login()
