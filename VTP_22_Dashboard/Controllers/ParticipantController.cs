@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VTP_22_Dashboard.DAL;
 using VTP_22_Dashboard.Models;
+using VTP_22_Dashboard.ViewModels;
 using VTP_22_Dashboard.ViewModels.Participant;
 
 namespace VTP_22_Dashboard.Controllers
@@ -18,13 +19,31 @@ namespace VTP_22_Dashboard.Controllers
             _mapper = mapper;
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page=1)
         {
-            ParticipantVM participantVM = new ParticipantVM()
+            ViewBag.TakeCount = 6;
+            var products = _context.Users.Skip((page - 1) * 6)
+                                .Take(6).Where(x => !x.IsActive).Include(x => x.Departments).Include(x => x.Universities).ToList();
+
+            var productsVM = GetProductList(products);
+            int pageCount = GetPageCount(6);
+            Paginate<ParticipantVM> model = new Paginate<ParticipantVM>(productsVM, page, pageCount);
+            return View(model);
+        }
+        private int GetPageCount(int take)
+        {
+            var prodCount = _context.Users.Where(x => !x.IsActive).Count();
+            return (int)Math.Ceiling((decimal)prodCount / take);
+        }
+        private List<ParticipantVM> GetProductList(List<AppUser> user)
+        {
+            List<ParticipantVM> model = new List<ParticipantVM>();
+            foreach (var item in user)
             {
-                Participant=_context.Users.Skip(1).Where(x => !x.IsActive).Include(x=>x.Departments).Include(x=>x.Universities).ToList(),
-            };
-            return View(participantVM);
+                ParticipantVM userList = _mapper.Map<ParticipantVM>(item);
+                model.Add(userList);
+            }
+            return model;
         }
         public async Task<IActionResult> Update(string id)
         {

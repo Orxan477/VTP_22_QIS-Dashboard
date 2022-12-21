@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6yK9JPI8PSSLeE9IMvipOC3gvVhBGABi63B65M8/xtM=",
+  "Hash": "w9xdP7sfHb0W03yHq/dMHgdEwzAvGPDS1q5L8BzpK3M=",
   "Source": "VTP_22_Dashboard",
   "BasePath": "_content/VTP_22_Dashboard",
   "Mode": "Default",
@@ -867,6 +867,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\carousel\\banner_9.jpg"
     },
     {
+      "Identity": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\wwwroot\\assets\\images\\dashboard\\buta.png",
+      "SourceId": "VTP_22_Dashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\wwwroot\\",
+      "BasePath": "_content/VTP_22_Dashboard",
+      "RelativePath": "assets/images/dashboard/buta.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\dashboard\\buta.png"
+    },
+    {
       "Identity": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\wwwroot\\assets\\images\\dashboard\\circle.png",
       "SourceId": "VTP_22_Dashboard",
       "SourceType": "Discovered",
@@ -899,6 +916,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\dashboard\\circle.svg"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\wwwroot\\assets\\images\\dashboard\\FooterLogoBlue.png",
+      "SourceId": "VTP_22_Dashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\wwwroot\\",
+      "BasePath": "_content/VTP_22_Dashboard",
+      "RelativePath": "assets/images/dashboard/FooterLogoBlue.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\dashboard\\FooterLogoBlue.png"
+    },
+    {
+      "Identity": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\wwwroot\\assets\\images\\dashboard\\FooterLogoBlue.webp",
+      "SourceId": "VTP_22_Dashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\wwwroot\\",
+      "BasePath": "_content/VTP_22_Dashboard",
+      "RelativePath": "assets/images/dashboard/FooterLogoBlue.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\dashboard\\FooterLogoBlue.webp"
     },
     {
       "Identity": "E:\\Documents\\Code Academy\\VTP22\\VTP_22_QIS-Dashboard\\VTP_22_Dashboard\\wwwroot\\assets\\images\\dashboard\\Group126@2x.png",

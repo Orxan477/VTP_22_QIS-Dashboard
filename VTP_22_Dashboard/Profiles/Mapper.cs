@@ -16,6 +16,8 @@ namespace VTP_22_Dashboard.Profiles
             CreateMap<Departments, UpdateDVM>();
             CreateMap<AppUser, UpdatePraticipant>();
             CreateMap<UpdatePraticipant, AppUser>();
-            }
+            CreateMap<AppUser, ParticipantVM>().ForMember(o => o.Department, m => m.MapFrom(x => x.Departments.Name))
+                                                                .ForMember(o => o.University, m => m.MapFrom(x => x.Universities.Name));
+        }
     }
 }
