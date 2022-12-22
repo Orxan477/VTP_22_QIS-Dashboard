@@ -7,5 +7,6 @@ namespace VTP_22_Dashboard.ViewModels.Home
         public int Universities{ get; set; }
         public int Departaments{ get; set; }
         public int Users{ get; set; }
+        public int Event { get; set; }
     }
 }

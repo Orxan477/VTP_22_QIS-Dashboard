@@ -103,6 +103,8 @@ namespace VTP_22_Dashboard.Controllers
             ev.Description = updateEv.Description;
             ev.DepartmentsId = updateEv.DepartmentsId;
             ev.Date = updateEv.Date;
+            ev.Location = updateEv.Location;
+            ev.Link = updateEv.Link;
         }
         private async Task GetSelectedItemAsync()
         {

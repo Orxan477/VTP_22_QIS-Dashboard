@@ -20,9 +20,9 @@ namespace VTP_22_Dashboard.Controllers
             {
                 Users = _context.Users.Where(x => !x.IsActive).Skip(1).Count(),
                 Departaments = _context.Departments.Count(),
-                Universities = _context.Universities.Count()
+                Universities = _context.Universities.Count(),
+                Event= _context.Events.Where(x => x.Date.Date <= DateTime.Now.Date && !x.IsActive).Count()
             };
-            var date = DateTime.Today;
             return View(home);
         }
     }
