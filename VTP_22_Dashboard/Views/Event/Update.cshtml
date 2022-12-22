@@ -1,0 +1,47 @@
+﻿@using VTP_22_Dashboard.ViewModels.Event
+@model UpdateEventVM
+@{
+    ViewData["Title"] = "update";
+}
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <h4 class="card-title">Create</h4>
+            </div>
+            <form class="forms-sample" method="post">
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label" asp-for="Name"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Name" class="form-control" id="exampleInputUsername2">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label" asp-for="Description"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Description" class="form-control" id="exampleInputUsername2">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label" asp-for="Date"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Date" class="form-control" id="exampleInputUsername2">
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label" asp-for="DepartmentsId">Department</label>
+                    <div class="col-sm-9">
+                        <select asp-for="DepartmentsId" asp-items="@ViewBag.department" class="form-select" aria-label="Default select example">
+                            <span class="text-danger" asp-validation-for="DepartmentsId"></span>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <a class="btn btn-white" asp-action="Index">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

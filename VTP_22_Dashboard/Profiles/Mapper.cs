@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using VTP_22_Dashboard.Models;
 using VTP_22_Dashboard.ViewModels.Department;
+using VTP_22_Dashboard.ViewModels.Event;
 using VTP_22_Dashboard.ViewModels.Participant;
 using VTP_22_Dashboard.ViewModels.University;
 
@@ -18,6 +19,8 @@ namespace VTP_22_Dashboard.Profiles
             CreateMap<UpdatePraticipant, AppUser>();
             CreateMap<AppUser, ParticipantVM>().ForMember(o => o.Department, m => m.MapFrom(x => x.Departments.Name))
                                                                 .ForMember(o => o.University, m => m.MapFrom(x => x.Universities.Name));
+            CreateMap<CreateEventVM, Event>();
+            CreateMap<Event, UpdateEventVM>();
         }
     }
 }

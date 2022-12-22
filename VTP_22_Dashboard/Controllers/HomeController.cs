@@ -22,6 +22,7 @@ namespace VTP_22_Dashboard.Controllers
                 Departaments = _context.Departments.Count(),
                 Universities = _context.Universities.Count()
             };
+            var date = DateTime.Today;
             return View(home);
         }
     }

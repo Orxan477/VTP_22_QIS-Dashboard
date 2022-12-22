@@ -10,5 +10,6 @@ namespace VTP_22_Dashboard.DAL
 
         public DbSet<Departments> Departments { get; set; }
         public DbSet<Universities> Universities { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

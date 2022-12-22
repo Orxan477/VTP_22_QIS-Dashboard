@@ -257,6 +257,38 @@ namespace VTP_22_Dashboard.Migrations
                     b.ToTable("Departments");
                 });
 
+            modelBuilder.Entity("VTP_22_Dashboard.Models.Event", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DepartmentsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentsId");
+
+                    b.ToTable("Events");
+                });
+
             modelBuilder.Entity("VTP_22_Dashboard.Models.Universities", b =>
                 {
                     b.Property<int>("Id")
@@ -342,6 +374,17 @@ namespace VTP_22_Dashboard.Migrations
                     b.Navigation("Departments");
 
                     b.Navigation("Universities");
+                });
+
+            modelBuilder.Entity("VTP_22_Dashboard.Models.Event", b =>
+                {
+                    b.HasOne("VTP_22_Dashboard.Models.Departments", "Departments")
+                        .WithMany()
+                        .HasForeignKey("DepartmentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Departments");
                 });
 
             modelBuilder.Entity("VTP_22_Dashboard.Models.Departments", b =>
