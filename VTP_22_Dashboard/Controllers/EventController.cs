@@ -18,12 +18,25 @@ namespace VTP_22_Dashboard.Controllers
             _context = context;
             _mapper = mapper;
         }
-        public IActionResult Index()
+        public IActionResult Index(EventVM eventVM)
         {
+            DateTime date = DateTime.Parse("01.01.0001 00:00:00");
+            if (eventVM.Filter.Date == date)
+            {
+                eventVM.Filter = DateTime.Now;
+                EventVM evCurrent = new EventVM()
+                {
+                    Events = _context.Events.Where(x => x.Date.Date <= eventVM.Filter.Date && !x.IsActive)
+                                            .Include(x => x.Departments).OrderByDescending(x => x.Date).ToList(),
+                    Filter = DateTime.Now.Date
+                };
+                return View(evCurrent);
+            }
             EventVM ev = new EventVM()
             {
-                Events = _context.Events.Where(x => x.Date.Date <= DateTime.Now.Date && !x.IsActive)
-                                        .Include(x => x.Departments).ToList(),
+                Events = _context.Events.Where(x => x.Date.Date == eventVM.Filter.Date && !x.IsActive)
+                                            .Include(x => x.Departments).OrderByDescending(x => x.Date).ToList(),
+                Filter = DateTime.Now.Date
             };
             return View(ev);
         }
@@ -31,7 +44,7 @@ namespace VTP_22_Dashboard.Controllers
         {
             EventVM ev = new EventVM()
             {
-                Event = await _context.Events.Where(x => !x.IsActive && x.Id == id).Include(x=>x.Departments).FirstOrDefaultAsync(),
+                Event = await _context.Events.Where(x => !x.IsActive && x.Id == id).Include(x => x.Departments).FirstOrDefaultAsync(),
             };
             if (ev is null) return NotFound();
             return View(ev);

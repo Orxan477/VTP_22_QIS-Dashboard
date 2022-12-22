@@ -12,8 +12,16 @@
                 <h4 class="card-title">Event</h4>
             </div>
             <div class="d-flex justify-content-end">
-                <a class="btn btn-success" asp-action="Create">Create</a>
+                    <a class="btn btn-success" asp-action="Create">Create Event</a>
             </div>
+                <div class="d-flex justify-content-end mt-2">
+                    <div class="col-sm-6 col-lg-5 p-0">
+                       <form method="post" class="d-flex">
+                            <input asp-for="Filter" type="date" class="form-control d-inline" id="exampleInputUsername2">
+                        <button class="btn btn-info d-inline ml-2" type="submit">Filter</button>
+                       </form>
+                    </div>
+                </div>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
