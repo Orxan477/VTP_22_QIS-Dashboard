@@ -31,7 +31,7 @@ namespace VTP_22_Dashboard.Controllers
         {
             EventVM ev = new EventVM()
             {
-                Event = await _context.Events.Where(x => !x.IsActive && x.Id == id).FirstOrDefaultAsync(),
+                Event = await _context.Events.Where(x => !x.IsActive && x.Id == id).Include(x=>x.Departments).FirstOrDefaultAsync(),
             };
             if (ev is null) return NotFound();
             return View(ev);

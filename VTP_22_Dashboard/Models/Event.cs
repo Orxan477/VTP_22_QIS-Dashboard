@@ -15,6 +15,9 @@ namespace VTP_22_Dashboard.Models
         public Departments Departments { get; set; }
         [Required]
         public DateTime Date { get; set; }
+        [Required]
+        public string Location { get; set; }
+        public string Link { get; set; }
         public bool IsActive { get; set; }
     }
 }

@@ -40,11 +40,11 @@
                                     <td>@ev.Date</td>
                                     @if (ev.Date <= DateTime.Now)
                                     {
-                                        <td class="text-success">Started</td>
+                                        <td><label class="badge badge-success">Started</label></td>
                                     }
                                     else
                                     {
-                                        <td class="text-warning">Soon</td>
+                                        <td><label class="badge badge-warning">Soon</label></td>
                                     }
                                     <td>
                                         <a asp-action="Detail" class="btn btn-primary" asp-route-id="@ev.Id"><i class="mdi mdi-eye"></i></a>
