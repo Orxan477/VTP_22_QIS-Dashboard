@@ -46,7 +46,7 @@ namespace VTP_22_Dashboard.Controllers
                 DepartmentsId = register.DepartentId,
                 PhoneNumber = register.PhoneNumber,
                 UserName = register.UserName,
-                CreatedAt=DateTime.UtcNow,
+                CreatedAt=DateTime.Now,
             };
             IdentityResult identityResult = await _userManager.CreateAsync(newUser, "Admin123");
             if (!identityResult.Succeeded)

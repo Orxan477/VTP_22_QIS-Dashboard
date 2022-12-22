@@ -22,8 +22,8 @@ namespace VTP_22_Dashboard.Controllers
         public IActionResult Index(int page=1)
         {
             ViewBag.TakeCount = 6;
-            var products = _context.Users.Skip((page - 1) * 6)
-                                .Take(6).Where(x => !x.IsActive).Include(x => x.Departments).Include(x => x.Universities).ToList();
+            var products = _context.Users.Where(x => !x.IsActive).Skip((page - 1) * 6)
+                                .Take(6).Include(x => x.Departments).Include(x => x.Universities).OrderByDescending(x=>x.CreatedAt).ToList();
 
             var productsVM = GetProductList(products);
             int pageCount = GetPageCount(6);

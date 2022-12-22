@@ -4,7 +4,6 @@
 
 @{
     ViewData["Title"] = "Index";
-    int n = 1;
     int count = ViewBag.TakeCount;
     int page = Model.PageCount;
     int productNum = ((Model.CurrentPage - 1) * count) + 1;
@@ -37,7 +36,7 @@
                         @foreach (var participant in Model.Items)
                         {
                             <tr>
-                                <td>@n</td>
+                                <td>@productNum</td>
                                 <td>@participant.FullName</td>
                                 <td>@participant.UserName</td>
                                 <td>@participant.Email</td>
@@ -53,7 +52,7 @@
                                     </form>*@
                                 </td>
                             </tr>
-                            n++;
+                            productNum++;
                         }
                     </tbody>
                 </table>
